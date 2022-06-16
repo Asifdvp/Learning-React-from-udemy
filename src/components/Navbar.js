@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
-import Prop
+import PropTypes from 'prop-types'
 export default class Navbar extends Component {
+    static defaultProps = {
+        title:"Default Apps"
+    }
   render() {
     return (
-      <div>Navbar</div>
+      <div>{this.props.title}</div>
     )
   }
 }
+Navbar.propTypes = {
+title:PropTypes.string.isRequired
+}
+// Navbar.defaultProps = {
+//     title : "sdfs"
+// }
