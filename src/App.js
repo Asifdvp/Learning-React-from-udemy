@@ -18,7 +18,7 @@ function App() {
      />
      <User
      name = "Asif"
-     department = "Front"
+    
      salary = "500"
      />
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from 'prop-types'
 export default function User(props){
   const {name,department,salary} = props;
     return(
@@ -13,4 +13,15 @@ export default function User(props){
 
     </div>
     )
+    
+}
+User.propTypes = {
+    name:PropTypes.string.isRequired,
+    department:PropTypes.string.isRequired,
+    maas:PropTypes.string.isRequired
+ }
+User.defaultProps = {
+    name:"Ad yoxdur",
+   department:" yoxdur",
+   salary:"yoxdur",
 }
