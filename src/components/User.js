@@ -7,6 +7,10 @@ export default class User extends React.Component{
     isVisible: false
   }
 handleClick = (num,e) =>{
+ this.setState({
+    isVisible : !this.state.isVisible
+ })
+   
 console.log(e.target)
 console.log(num)
 }
