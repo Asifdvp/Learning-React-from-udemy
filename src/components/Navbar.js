@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     }
   render() {
     return (
-      <div>{this.props.title}</div>
+      <h1>{this.props.title}</h1>
     )
   }
 }
