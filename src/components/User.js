@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 export default class User extends React.Component{
@@ -11,8 +11,11 @@ handleClick = (num,e) =>{
     isVisible : !this.state.isVisible
  })
    
-console.log(e.target)
-console.log(num)
+}
+OndeleteUser=()=>{
+  const {id,deleteUser} = this.props;
+  deleteUser(id)
+  console.log(id)
 }
   
 render(){
@@ -23,7 +26,7 @@ const {isVisible} = this.state
 <div className="card">
     <div className="card-header d-flex justify-content-between">
         <h4 className="d-inline"   onClick={this.handleClick.bind(this,name)} >{name} </h4>
-        <FontAwesomeIcon icon={faTrash} className="icon" />
+        <FontAwesomeIcon icon={faTrash} className="icon" onClick={this.OndeleteUser}/>
 
     </div>
 
@@ -45,5 +48,6 @@ User.defaultProps = {
 User.propTypes = {
     name:PropTypes.string.isRequired,
     department:PropTypes.string.isRequired,
-    salary:PropTypes.string.isRequired
+    salary:PropTypes.string.isRequired,
+    deleteUser:PropTypes.func.isRequired
  }

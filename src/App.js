@@ -2,7 +2,6 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import User from './components/User';
 import Users from './components/Users';
 class App extends React.Component{
   state={
@@ -16,11 +15,17 @@ class App extends React.Component{
 
     ]
   }
+  deleteUser=(id) =>{
+    this.setState({
+      users:this.state.users.filter(user=>{ return id !==  user.id})
+    })
+
+  }
 render() {
   return (
     <div className="App container">
       <Navbar />
-      <Users data={this.state.users} />
+      <Users data={this.state.users} deleteUser={this.deleteUser}/>
      
     </div>
   );
